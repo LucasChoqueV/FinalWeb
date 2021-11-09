@@ -1,0 +1,23 @@
+.image-background {
+    background-image: url("../assets/frontend/img/background.jpg");
+    background-size: cover;
+    width: 100%;
+}
+
+.bg-1 {
+    background: #1E1E1E;
+}
+
+.bg-2 {
+    background: #252526;
+}
+
+.bg-3 {
+    background: #333333;
+}
+
+.card {
+    background: none;
+    border: 0;
+    padding: 0;
+}
