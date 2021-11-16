@@ -1,0 +1,121 @@
+{
+    "frames": [
+        {
+            "filename": "player_run_0",
+            "frame": {
+                "x": 19,
+                "y": 11,
+                "w": 50,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_1",
+            "frame": {
+                "x": 71,
+                "y": 11,
+                "w": 36,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_2",
+            "frame": {
+                "x": 113,
+                "y": 11,
+                "w": 24,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_3",
+            "frame": {
+                "x": 145,
+                "y": 11,
+                "w": 31,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_4",
+            "frame": {
+                "x": 181,
+                "y": 11,
+                "w": 46,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_5",
+            "frame": {
+                "x": 240,
+                "y": 11,
+                "w": 38,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_6",
+            "frame": {
+                "x": 285,
+                "y": 11,
+                "w": 38,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_7",
+            "frame": {
+                "x": 330,
+                "y": 11,
+                "w": 42,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "player_run_8",
+            "frame": {
+                "x": 382,
+                "y": 11,
+                "w": 43,
+                "h": 80
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 import Bootloader from './Bootloader.js';
+import Nivel1 from './scenes/Nivel1.js';
 
 const config = {
     title: "TrabajoFinal",
@@ -7,7 +8,7 @@ const config = {
     scale: {
         parent: "phaser_container",
         width: 800,
-        height: 600,
+        height: 500,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
@@ -18,11 +19,13 @@ const config = {
         "arcade": {
             gravity: {
                 y: 500
-            }
+            },
+            debug: true
         }
     },
     scene: [
-        Bootloader
+        Bootloader,
+        Nivel1
     ]
 };
 
