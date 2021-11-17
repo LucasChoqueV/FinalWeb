@@ -32,14 +32,18 @@ class Nivel1 extends Phaser.Scene{
             y: this.scale.height - 150
         }, this.input);
 
-        obstacules.forEach(obs => {
-            this.obstaculesObject.push(new Obstacule({
-                scene: this,
-                x: obs.x,
-                y: obs.y,
-                spriteName: obs.spriteName
-            }, this.input));
-        });
+        //metodo para cargar la lista? de obstaculos
+        this.loadObstacles();
+        // obstacules.forEach(obs => {
+        //     this.obstaculesObject.push(new Obstacule({
+        //         scene: this,
+        //         x: obs.x,
+        //         y: obs.y,
+        //         spriteName: obs.spriteName
+        //     }, this.input));
+        // });
+
+        
 
         this.physics.add.collider(this.player, this.walls);
         this.physics.add.collider(this.obstaculesObject, this.walls);
@@ -52,6 +56,48 @@ class Nivel1 extends Phaser.Scene{
             obs.update();
         })
         this.background.body.setVelocityX(-80);
+    }
+
+    loadObstacles(){
+        
+        api.fetchObstacles(1, 'obstacule_1')
+        .then(responseA => {
+            console.log("obstaculo "+responseA);
+            responseA.forEach(obs => {
+                this.obstaculesObject.push(new Obstacule({
+                    scene: this,
+                    x: obs.x_value,
+                    y: obs.y_value,
+                    spriteName: obs.spriteName
+                }, this.input));
+            });
+        })
+
+        api.fetchObstacles(1, 'obstacule_2')
+        .then(responseB => {
+            console.log("obstaculo "+responseB);
+            responseB.forEach(obs => {
+                this.obstaculesObject.push(new Obstacule({
+                    scene: this,
+                    x: obs.x_value,
+                    y: obs.y_value,
+                    spriteName: obs.spriteName
+                }, this.input));
+            });
+        })
+
+        api.fetchObstacles(1, 'obstacule_3')
+        .then(responseC => {
+            console.log("obstaculo "+responseC);
+            responseC.forEach(obs => {
+                this.obstaculesObject.push(new Obstacule({
+                    scene: this,
+                    x: obs.x_value,
+                    y: obs.y_value,
+                    spriteName: obs.spriteName
+                }, this.input));
+            });
+        })
     }
 }
 
