@@ -33,14 +33,26 @@
                 {
                     "key": "player",
                     "frame": "player_run_6"
+                }
+            ]
+        },
+        {
+            "key": "player_jump",
+            "type": "frames",
+            "repeat": 1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "player",
+                    "frame": "player_jump_0"
                 },
                 {
                     "key": "player",
-                    "frame": "player_run_7"
+                    "frame": "player_jump_1"
                 },
                 {
                     "key": "player",
-                    "frame": "player_run_8"
+                    "frame": "player_jump_2"
                 }
             ]
         }

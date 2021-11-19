@@ -55,7 +55,7 @@ class Nivel1 extends Phaser.Scene{
         this.obstaculesObject.forEach(obs => {
             obs.update();
         })
-        this.background.body.setVelocityX(-80);
+        this.background.body.setVelocityX(-150);
     }
 
     loadObstacles(){

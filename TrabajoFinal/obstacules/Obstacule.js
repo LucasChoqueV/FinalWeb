@@ -7,14 +7,14 @@ class Obstacule extends Phaser.GameObjects.Sprite {
         this.previousMovement = "run";
         this.spriteName = config.spriteName;
         this.actualAnimation = config.spriteName + "_run";
-        this.body.setSize(15, 45);
-        this.body.setOffset(1, 0);
+        this.body.setSize(15, 25);
+        this.body.setOffset(1, 20);
         this.setScale(2.6);
         this.anims.play(this.actualAnimation);
     }
 
     update(){
-        this.body.setVelocityX(-80);
+        this.body.setVelocityX(-150);
     }
 }
 
