@@ -1,5 +1,6 @@
 import Bootloader from './Bootloader.js';
 import Nivel1 from './scenes/Nivel1.js';
+import Nivel2 from './scenes/Nivel2.js';
 
 const config = {
     title: "TrabajoFinal",
@@ -18,14 +19,16 @@ const config = {
         default: "arcade",
         "arcade": {
             gravity: {
-                y: 2000
+                y: 0,
+                x: 0
             },
             debug: true
         }
     },
     scene: [
         Bootloader,
-        Nivel1
+        Nivel1,
+        Nivel2
     ]
 };
 

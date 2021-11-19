@@ -1,12 +1,12 @@
 {
     "frames": [
         {
-            "filename": "obstacule_3_run_0",
+            "filename": "obstacule_4_run_0",
             "frame": {
-                "x": 8,
-                "y": 22,
-                "w": 14,
-                "h": 28
+                "x": 9,
+                "y": 10,
+                "w": 40,
+                "h": 15
             },
             "anchor": {
                 "x": 0.5,
@@ -14,12 +14,12 @@
             }
         },
         {
-            "filename": "obstacule_3_run_1",
+            "filename": "obstacule_4_run_1",
             "frame": {
-                "x": 35,
-                "y": 22,
-                "w": 16,
-                "h": 28
+                "x": 56,
+                "y": 10,
+                "w": 37,
+                "h": 15
             },
             "anchor": {
                 "x": 0.5,
@@ -27,12 +27,12 @@
             }
         },
         {
-            "filename": "obstacule_3_run_2",
+            "filename": "obstacule_4_run_2",
             "frame": {
-                "x": 61,
-                "y": 22,
-                "w": 22,
-                "h": 28
+                "x": 99,
+                "y": 10,
+                "w": 40,
+                "h": 15
             },
             "anchor": {
                 "x": 0.5,
@@ -40,12 +40,12 @@
             }
         },
         {
-            "filename": "obstacule_3_run_3",
+            "filename": "obstacule_4_run_3",
             "frame": {
-                "x": 92,
-                "y": 22,
-                "w": 22,
-                "h": 28
+                "x": 145,
+                "y": 10,
+                "w": 40,
+                "h": 15
             },
             "anchor": {
                 "x": 0.5,
@@ -53,12 +53,12 @@
             }
         },
         {
-            "filename": "obstacule_3_run_4",
+            "filename": "obstacule_4_run_4",
             "frame": {
-                "x": 125,
-                "y": 22,
-                "w": 14,
-                "h": 28
+                "x": 188,
+                "y": 10,
+                "w": 40,
+                "h": 15
             },
             "anchor": {
                 "x": 0.5,
@@ -66,12 +66,12 @@
             }
         },
         {
-            "filename": "obstacule_3_run_5",
+            "filename": "obstacule_4_run_5",
             "frame": {
-                "x": 158,
-                "y": 22,
-                "w": 14,
-                "h": 28
+                "x": 234,
+                "y": 10,
+                "w": 40,
+                "h": 15
             },
             "anchor": {
                 "x": 0.5,

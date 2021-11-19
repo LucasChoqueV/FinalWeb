@@ -4,8 +4,7 @@ const mysqlConnection = require('../database.js');
  // GET all
 router.get('/obstacles/:levelId', (req, res) => {
     const { levelId } = req.params;
-    const { spriteName } = req.query;
-    mysqlConnection.query('SELECT * FROM obstacles WHERE level_id=? AND spriteName=?', [levelId, spriteName],(err, rows, fields) => {
+    mysqlConnection.query('SELECT * FROM obstacles WHERE level_id=?', [levelId],(err, rows, fields) => {
         if (!err) {
             res.json(rows);
         } else {

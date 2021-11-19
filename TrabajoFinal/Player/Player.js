@@ -12,27 +12,35 @@ class Player extends Phaser.GameObjects.Sprite{
         this.setScale(1.7);
         this.anims.play(this.actualAnimation);
         this.movement = this.scene.input.keyboard.createCursorKeys();
-        this.isJumping = false;
+        this.isJumping = true;
+        this.setFlipY(config.flipY);
+        this.body.setGravityY(config.gravityY);
+        this.isGravityInverted = config.isGravityInverted;
     }
 
     update(){
-        if (!this.isJumping){
+        if (this.movement.up.isDown && !this.isJumping && !this.isGravityInverted){
+            this.isJumping = true;
+            this.body.setVelocityY(-1500);
+            if (this.previousMovement !== "jump"){
+                this.previousMovement = "jump";
+                this.anims.play("player_jump");
+            }
+        } else if (this.movement.up.isDown && !this.isJumping && this.isGravityInverted){
+            this.isJumping = true;
+            this.body.setVelocityY(1300);
+            if (this.previousMovement !== "jump"){
+                this.previousMovement = "jump";
+                this.anims.play("player_run");
+            }
+        } else if (this.body.blocked.down || this.body.blocked.up){
+            this.isJumping = false;
+            this.body.setVelocityY(0);
             if (this.previousMovement !== "run"){
                 this.previousMovement = "run";
                 this.anims.play("player_run");
             }
         }
-        if(Phaser.Input.Keyboard.JustDown(this.movement.up) && !this.isJumping){
-            this.isJumping = true;
-            this.body.setVelocityY(-900);
-            if (this.previousMovement !== "jump"){
-                this.previousMovement = "jump";
-                this.anims.play("player_jump");
-            }
-        }else if (this.body.blocked.down){ // aqui se pregunta si el cuerpo esta tocando el piso
-            this.isJumping = false;
-        }
-        
     }
 }
 

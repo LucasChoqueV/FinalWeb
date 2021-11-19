@@ -1,12 +1,12 @@
 import Obstacule from "../../obstacules/Obstacule.js";
 import Player from "../../Player/Player.js";
-import { obstacules } from "../../obstacules/ObstaculeList.js";
+
 class Nivel1 extends Phaser.Scene{
     constructor(){
         super({
             key: "Nivel1"
         });
-
+        this.velocityX = -300;
         this.obstaculesObject = [];
     }
 
@@ -15,86 +15,83 @@ class Nivel1 extends Phaser.Scene{
     }
 
     create(){
+        // create scene
+        this.loadScene();
 
-        this.background = this.add.sprite(0, -50, "background")
-            .setOrigin(0, 0);
-        this.physics.world.enable(this.background);
-        // add walls, creo un grupo de fisicas estaticas
+        // create portal
+        this.portalNivel1 = this.physics.add.sprite(5500, 200, "portalGravity")
+            .setScale(1.4)
+            .setVelocityX(this.velocityX);
+
+        // create player
+        this.player = new Player({
+            scene: this,
+            x: 200,
+            y: this.scale.height - 150,
+            flipY: false,
+            gravityY: 4000,
+            isGravityInverted: false,
+        }, this.input);
+
+        // craete enemies
+        this.loadObstacles();
+
+        // create colision
+        this.addColliders();
+        
+    }
+
+    loadScene(){
+        // create background
+        this.background = this.physics.add.sprite(0, -45, "background");
+        this.background.setOrigin(0, 0);
+        this.background.setVelocityX(this.velocityX);
+
+        // create floor
         this.walls = this.physics.add.staticGroup();
         this.walls.create(0, this.scale.height, "floor")
             .setOrigin(0, 1)
             .setSize(15000, 100);
+
         this.walls.refresh();
+    }
 
-        this.player = new Player({
-            scene: this,
-            x: 200,
-            y: this.scale.height - 150
-        }, this.input);
-
-        //metodo para cargar la lista? de obstaculos
-        this.loadObstacles();
-        // obstacules.forEach(obs => {
-        //     this.obstaculesObject.push(new Obstacule({
-        //         scene: this,
-        //         x: obs.x,
-        //         y: obs.y,
-        //         spriteName: obs.spriteName
-        //     }, this.input));
-        // });
-
-        
-
-        this.physics.add.collider(this.player, this.walls);
+    addColliders(){
+        this.physics.add.collider([this.player, this.portalNivel1, this.background], this.walls);
         this.physics.add.collider(this.obstaculesObject, this.walls);
-        this.physics.add.collider(this.background, this.walls);
+        this.physics.add.collider(this.player, this.obstaculesObject, () => {
+            this.scene.restart();
+        })
+
+        this.physics.add.overlap(this.player, this.portalNivel1, () => {
+            this.scene.start("Nivel2");
+        })
     }
 
     update(){
         this.player.update();
-        this.obstaculesObject.forEach(obs => {
-            obs.update();
-        })
-        this.background.body.setVelocityX(-150);
     }
 
     loadObstacles(){
-        
-        api.fetchObstacles(1, 'obstacule_1')
+        api.fetchObstacles(1)
         .then(responseA => {
-            console.log("obstaculo "+responseA);
             responseA.forEach(obs => {
                 this.obstaculesObject.push(new Obstacule({
                     scene: this,
                     x: obs.x_value,
                     y: obs.y_value,
-                    spriteName: obs.spriteName
-                }, this.input));
-            });
-        })
-
-        api.fetchObstacles(1, 'obstacule_2')
-        .then(responseB => {
-            console.log("obstaculo "+responseB);
-            responseB.forEach(obs => {
-                this.obstaculesObject.push(new Obstacule({
-                    scene: this,
-                    x: obs.x_value,
-                    y: obs.y_value,
-                    spriteName: obs.spriteName
-                }, this.input));
-            });
-        })
-
-        api.fetchObstacles(1, 'obstacule_3')
-        .then(responseC => {
-            console.log("obstaculo "+responseC);
-            responseC.forEach(obs => {
-                this.obstaculesObject.push(new Obstacule({
-                    scene: this,
-                    x: obs.x_value,
-                    y: obs.y_value,
-                    spriteName: obs.spriteName
+                    spriteName: obs.spriteName,
+                    flipY: false,
+                    gravityY: 4000,
+                    scale: 2.6,
+                    size: {
+                        x: 15,
+                        y: 35
+                    },
+                    offset: {
+                        x: 1,
+                        y: 10
+                    }
                 }, this.input));
             });
         })
