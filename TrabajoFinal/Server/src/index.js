@@ -16,6 +16,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use(require('./routes/obstacles'));
+app.use(require('./routes/players'));
 
 // Starting the server
 app.listen(app.get('port'), () => {

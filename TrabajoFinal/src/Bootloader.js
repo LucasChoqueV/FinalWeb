@@ -11,11 +11,27 @@ class Bootloader extends Phaser.Scene {
             "invisible-floor",
             "background",
             "background2",
-            "portalGravity"  
+            "background3",
+            "portalGravity",
+            "portal",
+            "portalFlap",
+            "menu",
+            "pause",
+            "victory",
+            "gameOver"
         ]);
+
+        this.load.atlas("player_flap", "../playerFlap/playerFlap.png", "../playerFlap/playerFlap_atlas.json");
+        this.load.animation("playerFlapAnim", "../playerFlap/playerFlap_anims.json");
 
         this.load.atlas("player", "../player/player.png", "../player/player_atlas.json");
         this.load.animation("playerAnim", "../player/player_anims.json");
+
+        this.load.atlas("obstacule_7", "../obstacule_7/obstacule_7.png", "../obstacule_7/obstacule_7_atlas.json");
+        this.load.animation("obstacule7Anim", "../obstacule_7/obstacule_7_anims.json");
+
+        this.load.atlas("obstacule_6", "../obstacule_6/obstacule_6.png", "../obstacule_6/obstacule_6_atlas.json");
+        this.load.animation("obstacule6Anim", "../obstacule_6/obstacule_6_anims.json");
 
         this.load.atlas("obstacule_5", "../obstacule_5/obstacule_5.png", "../obstacule_5/obstacule_5_atlas.json");
         this.load.animation("obstacule5Anim", "../obstacule_5/obstacule_5_anims.json");
@@ -32,8 +48,14 @@ class Bootloader extends Phaser.Scene {
         this.load.atlas("obstacule_1", "../obstacule_1/obstacule_1.png", "../obstacule_1/obstacule_1_atlas.json");
         this.load.animation("obstacule1Anim", "../obstacule_1/obstacule_1_anims.json");
 
+        this.load.audio('song', "../sounds/sound1.ogg");
+
+        this.load.audio('song1', "../sounds/sound2.ogg");
+
+        this.load.audio('song2', "../sounds/sound3.ogg");
+
         this.load.on('complete', () => {
-            this.scene.start("Nivel1");
+            this.scene.start("Menu");
         });
     }
 

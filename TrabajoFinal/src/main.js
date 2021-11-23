@@ -1,6 +1,11 @@
 import Bootloader from './Bootloader.js';
+import Menu from './scenes/Menu.js'; 
+import Pause from './scenes/Pause.js' 
 import Nivel1 from './scenes/Nivel1.js';
 import Nivel2 from './scenes/Nivel2.js';
+import Nivel3 from './scenes/Nivel3.js';
+import Victory from './scenes/Victory.js';
+import GameOver from './scenes/GameOver.js';
 
 const config = {
     title: "TrabajoFinal",
@@ -27,8 +32,13 @@ const config = {
     },
     scene: [
         Bootloader,
+        Menu,
+        Pause,
         Nivel1,
-        Nivel2
+        Nivel2,
+        Nivel3,
+        Victory,
+        GameOver
     ]
 };
 
